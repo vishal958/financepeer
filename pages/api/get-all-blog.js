@@ -1,5 +1,5 @@
 import connectDB from "../../middleware/mongodb";
-import Blog from "../../models/blog";
+import Blog from "../../models/Blog";
 
 const handler = (req, res) => {
   Blog.find({}, function (err, blogs) {

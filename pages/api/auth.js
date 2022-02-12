@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import connectDB from "../../middleware/mongodb";
-import Users from "../../models/user";
+import Users from "../../models/User";
 
 const handler = (req, res) => {
   const { email, password } = req.body;

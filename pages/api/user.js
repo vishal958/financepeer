@@ -1,6 +1,6 @@
 import connectDB from "../../middleware/mongodb";
 import bcrypt from "bcryptjs";
-import User from "../../models/user";
+import User from "../../models/User";
 const handler = (req, res) => {
   if (req.method === "POST") {
     const { name, email, password } = req.body;
