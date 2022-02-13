@@ -1,10 +1,18 @@
 import connectDB from "../../middleware/mongodb";
 import bcrypt from "bcryptjs";
 import User from "../../models/User";
-const handler = (req, res) => {
+
+const handler = async (req, res) => {
   if (req.method === "POST") {
     const { name, email, password } = req.body;
     if (name && email && password) {
+      const existUser = await User.findOne({ email: email });
+      if (existUser) {
+        return res
+          .status(400)
+          .json({ status: "error", error: "User Already exist" });
+      }
+
       // Hash password to store it in DB
       const user = new User({
         name,

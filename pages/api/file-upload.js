@@ -4,7 +4,6 @@ import Blog from "../../models/Blog";
 const handler = (req, res) => {
   if (req.method === "POST") {
     const { data } = req.body;
-    console.log(data);
     const blog = new Blog({
       blogs: data,
     });
