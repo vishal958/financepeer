@@ -212,10 +212,10 @@ export default function Home(props) {
   }
 
   return (
-    <Layout>
+    <Layout profile={profile}>
       <div className="container">
         <main>
-          <h1 className="title">Machine Code(Financepeer)</h1>
+          <h4 className="title">Machine Code(Financepeer)</h4>
           {!profile ? (
             <>
               <h3>Create Account</h3>

@@ -199,10 +199,10 @@ export default function Home(props) {
   }
 
   return (
-    <Layout>
+    <Layout profile={profile}>
       <div className="container">
         <main>
-          <h1 className="title">Machine Code(Financepeer)</h1>
+          <h4 className="title">Machine Code(Financepeer)</h4>
           {!profile ? (
             <>
               <h3>Login to continue</h3>
@@ -221,7 +221,7 @@ export default function Home(props) {
             </>
           ) : (
             <div>
-              <Link href={{ pathname: "/about" }}>
+              <Link href={{ pathname: "/upload" }}>
                 <a style={{ marginRight: ".75rem" }}>&bull; Upload JSON </a>
               </Link>
               <a href="#" onClick={(e) => handleOnClickLogout(e)}>

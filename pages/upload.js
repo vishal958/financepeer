@@ -45,27 +45,14 @@ export default function About(props) {
   }
 
   return (
-    <Layout>
+    <Layout profile={profile}>
       <div className="container">
         <main>
-          <h1 className="title">Upload JSON</h1>
+          <h1 className="title">Upload JSON Here</h1>
           {!profile ? (
-            <a href="/">Login to continue</a>
+            <a href="/">Login to continue.....</a>
           ) : (
             <>
-              <div style={{ margin: ".5rem 0rem" }}>
-                <Link href={{ pathname: "/" }}>
-                  <a style={{ marginRight: ".75rem" }}>&bull; Home Page</a>
-                </Link>
-                <Link href={{ pathname: "/get-all" }}>
-                  <a style={{ marginRight: ".75rem" }}>&bull; View All Data</a>
-                </Link>
-                <a href="#" onClick={(e) => handleOnClickLogout(e)}>
-                  &bull; Logout
-                </a>
-              </div>
-              <h1>Upload Json file</h1>
-
               <input type="file" onChange={handleChange} />
               {files && (
                 <Link href={{ pathname: "/get-all" }}>

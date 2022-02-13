@@ -6,6 +6,7 @@ import {
   verifyToken,
   setLogout,
 } from "../middleware/utils";
+import Layout from "../components/layout/Layout";
 
 function Blog({ blogs, profile }) {
   const router = useRouter();
@@ -16,44 +17,34 @@ function Blog({ blogs, profile }) {
     setLogout(e);
   }
   return (
-    <div className="all__blogs">
-      {!profile ? (
-        <a href="/">Login to continue</a>
-      ) : (
-        <>
-          <div className="title" style={{ fontSize: "1.3rem", margin: "1rem" }}>
-            <Link href={{ pathname: "/" }}>
-              <a style={{ marginRight: ".75rem" }}>&bull; Home Page</a>
-            </Link>
-            <Link href={{ pathname: "/get-all" }}>
-              <a style={{ marginRight: ".75rem" }}>&bull; View All</a>
-            </Link>
-            <a href="#" onClick={(e) => handleOnClickLogout(e)}>
-              &bull; Logout
-            </a>
-          </div>
-
-          {blogs.map((ele, key) => {
-            return (
-              <div key={key} className="peer__companies--inner">
-                <div>
-                  <b> Userid: </b>
-                  <span>{ele.userId}</span>
+    <Layout profile={profile}>
+      <div className="all__blogs">
+        {!profile ? (
+          <a href="/">Login to continue</a>
+        ) : (
+          <>
+            {blogs.map((ele, key) => {
+              return (
+                <div key={key} className="peer__companies--inner">
+                  <div>
+                    <b> Userid: </b>
+                    <span>{ele.userId}</span>
+                  </div>
+                  <div className="peer--data--name">
+                    <strong> Title:</strong>
+                    <span>{ele.title}</span>
+                  </div>
+                  <div className="peer--data--name">
+                    <strong> Body: </strong>
+                    <span>{ele.body}</span>
+                  </div>
                 </div>
-                <div className="peer--data--name">
-                  <strong> Title:</strong>
-                  <span>{ele.title}</span>
-                </div>
-                <div className="peer--data--name">
-                  <strong> Body: </strong>
-                  <span>{ele.body}</span>
-                </div>
-              </div>
-            );
-          })}
-        </>
-      )}
-    </div>
+              );
+            })}
+          </>
+        )}
+      </div>
+    </Layout>
   );
 }
 export default Blog;
