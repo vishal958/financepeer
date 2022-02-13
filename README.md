@@ -26,7 +26,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited.
 
 ## Deployment
-   1. Code is deployed on vercel and can be accessed at [https://financepeer.vercel.app/](https://financepeer.vercel.app/).
+   1. Code is deployed on vercel and can be accessed at [https://financepeer.vercel.app/](https://financepeer.vercel.app/),[ https://financepeer-vishal958.vercel.app](https://financepeer-vishal958.vercel.app/).
    2. Credentials to login: 
         ``` Email : admin@gmail.com ```
         ``` Password: admin@123 ```
